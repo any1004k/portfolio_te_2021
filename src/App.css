@@ -36,3 +36,90 @@
     transform: rotate(360deg);
   }
 }
+
+/********************** 네비게이션바 ************************/
+nav {
+  z-index: 2;
+}
+.logoLion {
+  width: 3.25rem;
+  height: 3rem;
+}
+
+nav a.nav-link {
+  font-weight: 700;
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  color: rgb(211, 214, 218) !important;
+  text-decoration: "none";
+}
+
+/* .navbar-nav > li > a {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  color: rgb(211, 214, 218) !important;
+} */
+
+.navbar-nav > li > a:focus {
+  border-top: 0.1875rem solid rgb(240, 152, 20);
+}
+
+/********************** 헤더 ************************/
+.header-wrapper {
+  position: relative;
+  background: url("../src/img/back.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(10, 7, 44, 0.514);
+}
+.main-info h1 {
+  color: rgb(250, 192, 3);
+  font-weight: 700;
+}
+.contact_button {
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffffff;
+  border: 0.1rem solid rgb(240, 52, 52);
+  text-decoration: none;
+}
+.contact_button:hover {
+  background-color: rgb(240, 52, 52);
+}
+
+.react-typed {
+  font-size: 2rem;
+  color: rgb(219, 217, 223);
+  font-weight: 500;
+}
+
+/********************** 파티클************************/
+
+.tsparticles-canvas-el {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .particles {
+    display: none;
+  }
+}
