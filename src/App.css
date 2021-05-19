@@ -54,6 +54,7 @@ nav a.nav-link {
   margin-right: 0.75rem;
   color: rgb(211, 214, 218) !important;
   text-decoration: "none";
+  border-top: 0.1875rem solid rgb(255, 255, 255, 0);
 }
 
 /* .navbar-nav > li > a {
@@ -62,11 +63,13 @@ nav a.nav-link {
   color: rgb(211, 214, 218) !important;
 } */
 
-.navbar-nav > li > a:focus {
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a.active {
   border-top: 0.1875rem solid rgb(240, 152, 20);
 }
 
-/********************** 헤더 ************************/
+/********************** HOME ************************/
 .header-wrapper {
   position: relative;
   background: url("../src/img/back.jpg") no-repeat;
@@ -92,6 +95,10 @@ nav a.nav-link {
   color: rgb(250, 192, 3);
   font-weight: 700;
 }
+
+/* .main-info > a:hover {
+  background-color: rgb(240, 52, 52);
+} */
 .contact_button {
   padding: 0.5rem;
   font-weight: 700;
@@ -100,9 +107,6 @@ nav a.nav-link {
   border: 0.1rem solid rgb(240, 52, 52);
   text-decoration: none;
 }
-.contact_button:hover {
-  background-color: rgb(240, 52, 52);
-}
 
 .react-typed {
   font-size: 2rem;
@@ -110,7 +114,7 @@ nav a.nav-link {
   font-weight: 500;
 }
 
-/********************** 파티클************************/
+/* 파티클*/
 
 .tsparticles-canvas-el {
   position: absolute;
@@ -122,4 +126,15 @@ nav a.nav-link {
   .particles {
     display: none;
   }
+}
+
+/********************** CONTACTS ************************/
+.table-DIY {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.table-responsive-md .write_button {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 2rem;
 }

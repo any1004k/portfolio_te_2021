@@ -2,6 +2,7 @@ import React from "react";
 import Typed from "react-typed";
 import Particles from "react-particles-js";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AboutMe from "./AboutMe.js";
 
 const Header = () => {
   return (
@@ -23,11 +24,13 @@ const Header = () => {
           ></Typed>
           <hr />
           <hr />
+
           <a href="#" className="contact_button">
             개발의뢰
           </a>
         </div>
       </div>
+      <AboutMe></AboutMe>
     </>
   );
 };
