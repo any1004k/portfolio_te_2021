@@ -1,19 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import logo from "../img/logo.png";
 // 리엑트 폰트아썸을 가져오기.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter, Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  //let a_ref = useRef(null);
   const a = "하이염";
   const b = "값입니다.";
 
-  // function handleFocus() {
-  //   a_ref.current.className += " active";
-  //   alert(a_ref.current.className);
-  // }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
@@ -39,47 +33,30 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink to="/" className="nav-link" activeClassName="active2">
+            <li className="nav-item active">
+              <a href="/" className="nav-link">
                 HOME
-              </NavLink>
+              </a>
             </li>
-
             <li className="nav-item">
-              <NavLink
-                to={`/AboutMe/${a}/${b}`}
-                className="nav-link"
-                activeClassName="active"
-              >
+              <a href={`/AboutMe/${a}/${b}`} className="nav-link">
                 ABOUT ME
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                to={`/Services/${a}/${b}`}
-                className="nav-link"
-                activeClassName="active"
-              >
+              <a href={`/Services/${a}/${b}`} className="nav-link">
                 SERVICES
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                to={`/Portfolio/${a}/${b}`}
-                className="nav-link"
-                activeClassName="active"
-              >
+              <a href={`/Portfolio/${a}/${b}`} className="nav-link">
                 PORTFOLIO
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                to={`/Contacts/read`}
-                className="nav-link"
-                activeClassName="active"
-              >
+              <a href={`/Contacts/${a}/${b}`} className="nav-link">
                 CONTACTS
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>

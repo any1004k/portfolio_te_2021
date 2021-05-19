@@ -1,8 +1,7 @@
 {
-  "host": "cins.iptime.org",
-       "user": "user",
-       "password": "Masterkey123!",
-       "port": "3307",
-       "database": "yh_project_scheduler"
-}
-
+    "host": "127.0.0.1",
+     "user": "root",
+     "password": "1234",
+     "port": "3306",
+     "database": "portfolio_21"
+   }
