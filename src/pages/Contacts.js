@@ -1,56 +1,69 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import Axios from "axios";
+import { firestore } from "../firebase.js";
+import * as Redux from "redux";
+import Contacts_read from "../component/Contacts_read.js";
+import Contacts_write from "../component/Contacts_write.js";
 
 // class Contacts extends React.Component {
 //   render() {
-function Contacts(props) {
-  //서버와 통신하려고 (server.js에 정보보냄)
-  let [movieName, fixMovieName] = useState("");
-  let [review, fixReview] = useState("");
-  let [movieList, fixMovieList] = useState([]);
-
-  useEffect(() => {
-    Axios.get("http://localhost:5000/api/get").then((re) => {
-      fixMovieList(re.data);
-    });
-  }, []);
-
-  const submitReview = () => {
-    Axios.post("http://localhost:5000/api/insert", {
-      col1: movieName,
-      col2: "하세요",
-    });
-
-    //fixMovieList([...movieList, { col1: movieName, col2: review }]);
+class Contacts extends Component {
+  state = {
+    mode: "read",
+    listNum: "",
   };
 
-  // 브라우저와 데이터 주고받으려고
-  const { params } = props.match;
-  console.log(params);
+  render() {
+    const { params } = this.props.match;
+    let v1 = params.v1;
+    console.log(v1);
 
-  //리턴값
-  return (
-    <div>
-      <h1>컨택트. 브라우저에서 받은 값: {params.v1}</h1>
+    let view = null;
+    if (this.state.mode === "read") {
+      view = (
+        <Contacts_read
+          onChange={() => {
+            this.setState({ mode: "write" });
+          }}
+        ></Contacts_read>
+      );
+    } else if (this.state.mode === "write") {
+      view = (
+        <Contacts_write
+          onChange={() => {
+            this.setState({ mode: "read" });
+          }}
+          data={this.state.listNum}
+        ></Contacts_write>
+      );
+    }
 
-      <label>DB와 통신</label>
-      <input
-        type="text"
-        name="movieName"
-        onChange={(e) => {
-          fixMovieName(e.target.value);
-        }}
-      ></input>
-      <button onClick={submitReview}>제출</button>
-      {movieList.map((val) => {
-        return (
-          <h1>
-            영화이름 : {val.col1} | 소감 : {val.col2}
-          </h1>
-        );
-      })}
-    </div>
-  );
+    return <>{view}</>;
+  }
 }
 
+//함수형 컴포넌트로 로컬 웹서버와 통신할 때
+// let [title, fix_title] = useState("");
+// let [writer, fix_writer] = useState("");
+// let [objectList, fix_objects] = useState([]);
+
+// useEffect(() => {
+//   Axios.get("http://localhost:5001/contacts/get").then((re) => {
+//     fix_objects(re.data);
+//     console.log(re);
+//   });
+// }, []);
+
+// const submitReview = () => {
+//   Axios.post("http://localhost:5001/api/insert", {
+//     title: title,
+//     writer: writer,
+//   });
+
+//   //fixMovieList([...movieList, { col1: movieName, col2: review }]);
+// };
+
+// 브라우저와 데이터 주고받으려고
+// const { params } = props.match;
+// console.log(params);
 export default Contacts;
