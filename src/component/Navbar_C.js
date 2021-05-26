@@ -6,14 +6,6 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  //let a_ref = useRef(null);
-  const a = "하이염";
-  const b = "값입니다.";
-
-  // function handleFocus() {
-  //   a_ref.current.className += " active";
-  //   alert(a_ref.current.className);
-  // }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
@@ -47,7 +39,7 @@ const Navbar = () => {
 
             <li className="nav-item">
               <NavLink
-                to={`/AboutMe/${a}/${b}`}
+                to={`/AboutMe`}
                 className="nav-link"
                 activeClassName="active"
               >
@@ -56,25 +48,25 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/Services/${a}/${b}`}
+                to={`/Skills`}
                 className="nav-link"
                 activeClassName="active"
               >
-                SERVICES
+                SKILLS
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/Portfolio/${a}/${b}`}
+                to={`/Portfolio`}
                 className="nav-link"
                 activeClassName="active"
               >
-                PORTFOLIO
+                EXPERIENCE
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/Contacts/read`}
+                to={`/Contacts`}
                 className="nav-link"
                 activeClassName="active"
               >

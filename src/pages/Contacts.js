@@ -3,7 +3,6 @@ import Axios from "axios";
 import { firestore } from "../firebase.js";
 import * as Redux from "redux";
 import Contacts_read from "../component/Contacts_read.js";
-import Contacts_write from "../component/Contacts_write.js";
 
 // class Contacts extends React.Component {
 //   render() {
@@ -20,22 +19,7 @@ class Contacts extends Component {
 
     let view = null;
     if (this.state.mode === "read") {
-      view = (
-        <Contacts_read
-          onChange={() => {
-            this.setState({ mode: "write" });
-          }}
-        ></Contacts_read>
-      );
-    } else if (this.state.mode === "write") {
-      view = (
-        <Contacts_write
-          onChange={() => {
-            this.setState({ mode: "read" });
-          }}
-          data={this.state.listNum}
-        ></Contacts_write>
-      );
+      view = <Contacts_read></Contacts_read>;
     }
 
     return <>{view}</>;
