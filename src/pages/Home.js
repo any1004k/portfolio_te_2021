@@ -28,16 +28,31 @@ const Header = () => {
           <h1>웹,앱 풀스텍 개발자 '김태은' 입니다.</h1>
           <Typed
             className="react-typed"
-            strings={["Website", "Mobile app", "Deep learning "]}
+            strings={[
+              "React / React Native",
+              "Javascript",
+              "Node.js",
+              "Express.js",
+              "Java",
+              "JSP",
+              "Spring",
+              "Tomcat",
+              "C#/ Winform",
+              "MSSQL,MYSQL,MariaDB",
+            ]}
             typeSpeed={70}
             loop
           ></Typed>
           <hr />
           <hr />
 
-          <a href="/Contacts" className="contact_button">
-            개발의뢰
-          </a>
+          <p
+            href="/Contacts"
+            className="contact_button"
+            onClick={() => alert("채용해 주셔서 감사합니다.")}
+          >
+            채용하기
+          </p>
         </div>
       </div>
     </>

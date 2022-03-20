@@ -11,7 +11,7 @@ import Navbar from "./component/Navbar_C.js";
 import Home from "./pages/Home.js";
 import Skills from "./pages/Skills.js";
 import Portfolio from "./pages/Portfolio.js";
-import Contacts from "./pages/Contacts.js";
+// import Contacts from "./pages/Contacts.js";
 import AboutMe from "./pages/AboutMe.js";
 
 import Erro404 from "./pages/Erro404.js";
@@ -32,7 +32,7 @@ class App extends React.Component {
             <Route exact path="/AboutMe" component={AboutMe}></Route>
             <Route exact path="/Skills" component={Skills}></Route>
             <Route exact path="/Portfolio" component={Portfolio}></Route>
-            <Route exact path="/Contacts" component={Contacts}></Route>
+            {/* <Route exact path="/Contacts" component={Contacts}></Route> */}
             <Route exact path="/404" component={Erro404}></Route>
             <Redirect to="/404"></Redirect>
           </Switch>

@@ -9,9 +9,11 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        {/* <a className="navbar-brand" href="#"> */}
+        <NavLink to={`/`} className="navbar-brand" activeClassName="active">
           <img className="logoLion" src={logo}></img>
-        </a>
+        </NavLink>
+        {/* </a> */}
 
         {/* 작은화면일 때 햄버거 메뉴 만들기 : 기존의 버튼에서 텍스트 넣는 곳에 폰트아썸 엘레먼트를 넣으면 됨 */}
         <button
@@ -31,11 +33,11 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink to="/" className="nav-link" activeClassName="active2">
                 HOME
               </NavLink>
-            </li>
+            </li> */}
 
             <li className="nav-item">
               <NavLink
@@ -43,7 +45,7 @@ const Navbar = () => {
                 className="nav-link"
                 activeClassName="active"
               >
-                ABOUT ME
+                INTRODUCE
               </NavLink>
             </li>
             <li className="nav-item">
@@ -61,10 +63,10 @@ const Navbar = () => {
                 className="nav-link"
                 activeClassName="active"
               >
-                EXPERIENCE
+                EXPERIENCES
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to={`/Contacts`}
                 className="nav-link"
@@ -72,7 +74,7 @@ const Navbar = () => {
               >
                 CONTACTS
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import { firestore, auth } from "../firebase.js";
+// import { firestore, auth } from "../firebase.js";
 import * as Redux from "redux";
-import { signInWithGoogle } from "../firebase.js";
+// import { signInWithGoogle } from "../firebase.js";
 
 class Contacts_read extends Component {
   // constructor() {
@@ -35,6 +35,7 @@ class Contacts_read extends Component {
   }
   logout = () => {
     auth.signOut();
+    this.setState({ figure_state: "read" });
   };
   selectHandler = () => {
     const tableLists_copy = [];
@@ -122,7 +123,8 @@ class Contacts_read extends Component {
       login = (
         <div className="login_message">
           <span>{user_name}님 반갑습니다! </span>
-          &nbsp;&nbsp;<button onClick={this.logout}>로그아웃</button>
+          &nbsp;&nbsp;
+          <button onClick={this.logout}>로그아웃</button>
         </div>
       );
     }
@@ -232,21 +234,50 @@ class Contacts_read extends Component {
                   if (user_name === null) {
                     return;
                   } else {
-                    this.setState({
-                      figure_state: "modify",
-                      title: this.state.tableLists[this.state.index].Title,
-                      writer: this.state.tableLists[this.state.index].Writer,
-                      contents:
-                        this.state.tableLists[this.state.index].Contents,
-                    });
+                    // debugger;
+                    if (
+                      user_name ===
+                      this.state.tableLists[this.state.index].GoogleId
+                    ) {
+                      this.setState({
+                        figure_state: "modify",
+                        title: this.state.tableLists[this.state.index].Title,
+                        writer: this.state.tableLists[this.state.index].Writer,
+                        contents:
+                          this.state.tableLists[this.state.index].Contents,
+                      });
+                    } else {
+                      alert("작성자만 수정 가능합니다.");
+                      return;
+                    }
                   }
                 } else {
-                  this.setState({
-                    figure_state: "modify",
-                    title: this.state.tableLists[this.state.index].Title,
-                    writer: this.state.tableLists[this.state.index].Writer,
-                    contents: this.state.tableLists[this.state.index].Contents,
-                  });
+                  if (user_name === null) {
+                    return;
+                  } else {
+                    // debugger;
+                    if (
+                      user_name ===
+                      this.state.tableLists[this.state.index].GoogleId
+                    ) {
+                      this.setState({
+                        figure_state: "modify",
+                        title: this.state.tableLists[this.state.index].Title,
+                        writer: this.state.tableLists[this.state.index].Writer,
+                        contents:
+                          this.state.tableLists[this.state.index].Contents,
+                      });
+                    } else {
+                      alert("작성자만 수정 가능합니다.");
+                      return;
+                    }
+                  }
+                  // this.setState({
+                  //   figure_state: "modify",
+                  //   title: this.state.tableLists[this.state.index].Title,
+                  //   writer: this.state.tableLists[this.state.index].Writer,
+                  //   contents: this.state.tableLists[this.state.index].Contents,
+                  // });
                 }
               }}
             >
@@ -314,7 +345,42 @@ class Contacts_read extends Component {
               type="button"
               className="btn btn-primary btn-lg btn-DIY"
               onClick={() => {
-                this.deleteHandler(this.state.tableLists[this.state.index].id);
+                // this.deleteHandler(this.state.tableLists[this.state.index].id);
+                if (user_name === null) {
+                  signInWithGoogle();
+                  if (user_name === null) {
+                    return;
+                  } else {
+                    if (
+                      user_name ===
+                      this.state.tableLists[this.state.index].GoogleId
+                    ) {
+                      this.deleteHandler(
+                        this.state.tableLists[this.state.index].id
+                      );
+                    } else {
+                      alert("작성자만 삭제 가능합니다.");
+                      return;
+                    }
+                  }
+                } else {
+                  if (user_name === null) {
+                    return;
+                  } else {
+                    // debugger;
+                    if (
+                      user_name ===
+                      this.state.tableLists[this.state.index].GoogleId
+                    ) {
+                      this.deleteHandler(
+                        this.state.tableLists[this.state.index].id
+                      );
+                    } else {
+                      alert("작성자만 삭제 가능합니다.");
+                      return;
+                    }
+                  }
+                }
               }}
             >
               삭제

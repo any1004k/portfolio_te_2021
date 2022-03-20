@@ -104,9 +104,11 @@ nav a.nav-link {
   font-weight: 700;
   font-size: 1.5rem;
   color: #ffffff;
-  border: 0.1rem solid rgb(240, 52, 52);
+  /* border: 0.1rem solid rgb(240, 52, 52); */
+  border: 0.1rem solid #e6d5b8;
   text-decoration: none;
   z-index: 5;
+  cursor: pointer;
 }
 
 .react-typed {
@@ -150,6 +152,10 @@ nav a.nav-link {
   margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
+}
+.login_message > button > a {
+  text-decoration: none;
+  color: #282c34;
 }
 .btn-DIY {
   background-color: chocolate !important;

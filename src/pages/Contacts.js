@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import { firestore } from "../firebase.js";
+// import { firestore } from "../firebase.js";
 import * as Redux from "redux";
 import Contacts_read from "../component/Contacts_read.js";
 

@@ -60,13 +60,31 @@
     ></script>
 
     <!-- 파이어베이스 SDK -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyC5f86VhEGb2AK1_zjDjMjbfVa39P-L5Cs",
+        authDomain: "portfolio-kte0127-d036b.firebaseapp.com",
+        projectId: "portfolio-kte0127-d036b",
+        storageBucket: "portfolio-kte0127-d036b.appspot.com",
+        messagingSenderId: "615780746857",
+        appId: "1:615780746857:web:0354ad5b03041583a804f8",
+        measurementId: "G-VDWZ03KPVP",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script> -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <script>
+    <!-- <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyCc7kHumwt9fQIUKWUlxXvf7Pl92Gds9gM",
@@ -78,6 +96,6 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-    </script>
+    </script> -->
   </body>
 </html>

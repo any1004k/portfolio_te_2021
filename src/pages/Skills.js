@@ -175,7 +175,7 @@ class Skills extends React.Component {
     return (
       <>
         <div className="container container_skill">
-          <h1>>> 보유기술</h1>
+          <h1> 보유기술</h1>
           <div className="ziehharmonika">
             <h3 data-prefix="★" className="">
               Framework <div className="arrowDown"></div>
