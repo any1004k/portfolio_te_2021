@@ -6,7 +6,6 @@ import "./pages/jquery.bxslider.css";
 
 //네비게이션(고정)
 import Navbar from "./component/Navbar_C.js";
-
 //페이지들
 import Home from "./pages/Home.js";
 import Skills from "./pages/Skills.js";

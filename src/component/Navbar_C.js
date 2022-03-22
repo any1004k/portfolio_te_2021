@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import logo from "../img/logo.png";
+import myIcon from "../img/myIcon.png";
+
 // 리엑트 폰트아썸을 가져오기.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -10,8 +11,12 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
         {/* <a className="navbar-brand" href="#"> */}
-        <NavLink to={`/`} className="navbar-brand" activeClassName="active">
-          <img className="logoLion" src={logo}></img>
+        <NavLink
+          to={`/`}
+          className="navbar-brand first"
+          activeClassName="active"
+        >
+          <img className="logoLion" src={myIcon}></img>
         </NavLink>
         {/* </a> */}
 

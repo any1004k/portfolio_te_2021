@@ -2,9 +2,14 @@ import React from "react";
 import Typed from "react-typed";
 import Particles from "react-particles-js";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { BrowserRouter, Link, NavLink } from "react-router-dom";
 
-const Header = () => {
+const Home = () => {
+  $("nav:not(.bg-dark)").addClass("bg-dark");
+
+  React.useEffect(() => {}, []);
+
   // 클릭하면 스크롤하는 제이쿼리
   // window.$(document).ready(function () {
   //   window.$(".scroll").click(function (event) {
@@ -14,7 +19,6 @@ const Header = () => {
   //       .animate({ scrollTop: window.$(this.hash).offset().top }, 50);
   //   });
   // });
-
   return (
     <>
       <Particles
@@ -59,4 +63,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Home;

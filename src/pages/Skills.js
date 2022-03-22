@@ -1,243 +1,302 @@
 import React from "react";
-import "./ziehharmonika.css";
-import jQuery from "jquery";
-window.$ = window.jQuery = jQuery;
+import myIcon from "../img/myIcon.png";
+//aos(스크롤 할 때  애니매이션)
+// import Aos from "aos";
+// import "aos/dist/aos.css";
+//3d배경
+// import BIRDS from "vanta/dist/vanta.birds.min";
+import DOTS from "vanta/dist/vanta.dots.min";
+//이미지
+import node from "../img/skills/node.jpg";
+import js from "../img/skills/js.png";
+import htmlCss from "../img/skills/htmlCss.png";
+import java from "../img/skills/java.png";
+import jsp from "../img/skills/jsp.png";
+import react from "../img/skills/react.png";
+import reactNative from "../img/skills/reactNative.png";
+import spring from "../img/skills/spring.png";
 
-class Skills extends React.Component {
-  componentDidMount() {
-    var settings;
-    window.$.fn.ziehharmonika = function (actionOrSettings, parameter) {
-      if (
-        typeof actionOrSettings === "object" ||
-        actionOrSettings === undefined
-      ) {
-        // Default settings:
-        settings = window.$.extend(
-          {
-            // To use a headline tag other than h3, adjust or overwrite ziehharmonika.css as well
-            headline: "h3",
-            // Give headlines a certain prefix, e.g. "♫ My headline"
-            prefix: false,
-            // Only 1 accordion can be open at any given time
-            highlander: true,
-            // Allow or disallow last open accordion to be closed
-            collapsible: false,
-            // Arrow down under headline
-            arrow: true,
-            // Opened/closed icon on the right hand side of the headline (either false or JSON containing symbols or image paths)
-            collapseIcons: {
-              opened: "&ndash;",
-              closed: "+",
-            },
-            // Collapse icon left or right
-            collapseIconsAlign: "right",
-            // Scroll to opened accordion element
-            scroll: true,
-          },
-          actionOrSettings
-        );
-      }
-      // actions
-      if (actionOrSettings == "open") {
-        if (settings.highlander) {
-          window.$(this).ziehharmonika("forceCloseAll");
-        }
-        var ogThis = window.$(this);
-        window
-          .$(this)
-          .addClass("active")
-          .next("div")
-          .slideDown(400, function () {
-            if (settings.collapseIcons) {
-              window
-                .$(".collapseIcon", ogThis)
-                .html(settings.collapseIcons.opened);
-            }
-            // parameter: scroll to opened element
-            if (parameter !== false) {
-              smoothScrollTo(window.$(this).prev(settings.collapseIcons));
-            }
-          });
-        return this;
-      } else if (
-        actionOrSettings == "close" ||
-        actionOrSettings == "forceClose"
-      ) {
-        // forceClose ignores collapsible setting
-        if (
-          actionOrSettings == "close" &&
-          !settings.collapsible &&
-          window.$(settings.headline + '[className="active"]').length == 1
-        ) {
-          return this;
-        }
-        var ogThis = window.$(this);
+import csharp from "../img/skills/csharp.png";
+import jquery from "../img/skills/jquery.png";
 
-        window
-          .$(this)
-          .removeClass("active")
-          .next("div")
-          .slideUp(400, function () {
-            if (settings.collapseIcons) {
-              window
-                .$(".collapseIcon", ogThis)
-                .html(settings.collapseIcons.closed);
-            }
-          });
-        return this;
-      } else if (actionOrSettings == "closeAll") {
-        window.$(settings.headline).ziehharmonika("close");
-      } else if (actionOrSettings == "forceCloseAll") {
-        // forceCloseAll ignores collapsible setting
-        window.$(settings.headline).ziehharmonika("forceClose");
-      }
+import git from "../img/skills/git.png";
+import github from "../img/skills/github.png";
+import fireBase from "../img/skills/fireBase.png";
+import mssql from "../img/skills/mssql.png";
+import mysql from "../img/skills/mysql.png";
+import mariaDB from "../img/skills/mariaDB.png";
+import vs from "../img/skills/vs.png";
+import vsc from "../img/skills/vsc.png";
+import androidStudio from "../img/skills/androidStudio.png";
+import eclipse from "../img/skills/eclipse.png";
 
-      if (settings.prefix) {
-        window.$(settings.headline, this).attr("data-prefix", settings.prefix);
-      }
-      if (settings.arrow) {
-        window
-          .$(settings.headline, this)
-          .append('<div className="arrowDown"></div>');
-      }
-      // if (settings.collapseIcons) {
-      //   window.$(settings.headline, this).each(function (index, el) {
-      //     if (window.$(this).hasClass("active")) {
-      //       window
-      //         .$(this)
-      //         .append(
-      //           '<div className="collapseIcon">' +
-      //             settings.collapseIcons.opened +
-      //             "</div>"
-      //         );
-      //     } else {
-      //       window
-      //         .$(this)
-      //         .append(
-      //           '<div className="collapseIcon">' +
-      //             settings.collapseIcons.closed +
-      //             "</div>"
-      //         );
-      //     }
-      //   });
-      // }
-      if (settings.collapseIconsAlign == "left") {
-        window.$(".collapseIcon, " + settings.headline).addClass("alignLeft");
-      }
+import c from "../img/skills/c.png";
+import python from "../img/skills/python.png";
+import typeScript from "../img/skills/typeScript.png";
+function Skills() {
+  $("nav:not(.bg-dark)").addClass("bg-dark");
 
-      window.$(settings.headline, this).click(function () {
-        if (window.$(this).hasClass("active")) {
-          window.$(this).ziehharmonika("close");
-        } else {
-          window.$(this).ziehharmonika("open", settings.scroll);
-        }
-      });
-    };
+  const [vantaEffect, setVantaEffect] = React.useState(0);
+  const myRef = React.useRef(null);
 
-    function smoothScrollTo(element, callback) {
-      var time = 400;
-      // window.$("html, body").animate(
-      window.$(".container").animate(
-        {
-          scrollTop: window.$(element).offset().top,
-        },
-        time,
-        callback
+  React.useEffect(() => {
+    // Aos.init({ duration: 1500 }); //이거 없으면 작동이 안되는듯?
+
+    if (!vantaEffect) {
+      setVantaEffect(
+        DOTS({
+          el: myRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0xbebebe,
+          color2: 0x222222,
+        })
       );
     }
-    // was in the html
-    window.$(".ziehharmonika").ziehharmonika({
-      collapsible: true,
-      prefix: "★",
-    });
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
-    var _gaq = _gaq || [];
-    _gaq.push(["_setAccount", "UA-36251023-1"]);
-    _gaq.push(["_setDomainName", "jqueryscript.net"]);
-    _gaq.push(["_trackPageview"]);
-
-    (function () {
-      var ga = document.createElement("script");
-      ga.type = "text/javascript";
-      ga.async = true;
-      ga.src =
-        ("https:" == document.location.protocol
-          ? "https://ssl"
-          : "http://www") + ".google-analytics.com/ga.js";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
-  render() {
-    // window.$(document).ready(function () {
-
-    // });
-    return (
-      <>
-        <div className="container container_skill">
-          <h1> 보유기술</h1>
-          <div className="ziehharmonika">
-            <h3 data-prefix="★" className="">
-              Framework <div className="arrowDown"></div>
-              <div className="collapseIcon">+</div>
-            </h3>
-            <div>
-              <p>
-                ● Spring <br /> ● React
-              </p>
-            </div>
-            <h3 data-prefix="★" className="">
-              Language<div className="arrowDown"></div>
-              <div className="collapseIcon">+</div>
-            </h3>
-            <div>
-              <p>
-                ● HTML
-                <br /> ● CSS
-                <br /> ● JavaScript
-                <br /> ● JQuery
-                <br /> ● node.js
-                <br /> ● Java
-                <br /> ● C<br /> ● C#
-                <br /> ● Python
-              </p>
-            </div>
-            <h3 data-prefix="★" className="">
-              DBMS<div className="arrowDown"></div>
-              <div className="collapseIcon">+</div>
-            </h3>
-            <div>
-              <p>
-                ● Workbench
-                <br /> ● HeidiSQL
-                <br /> ● SQL Server
-                <br /> ● Firebase
-              </p>
-            </div>
-            <h3 data-prefix="★" className="">
-              IDE <div className="arrowDown"></div>
-              <div className="collapseIcon">+</div>
-            </h3>
-            <div>
-              <p>
-                ● Visual Studio <br /> ● Visual Studio Code <br /> ● Eclipse{" "}
-                <br /> ● Android Studio
-              </p>
-            </div>
-            <h3 data-prefix="★" className="">
-              Version Constrol <div className="arrowDown"></div>
-              <div className="collapseIcon">+</div>
-            </h3>
-            <div>
-              <p>
-                ● Git <br /> ● Github
-              </p>
-            </div>
-          </div>
+  return (
+    <div
+      ref={myRef}
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "80%",
+          height: "100vh",
+          display: "flex",
+          flexFlow: "column nowrap",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <div>
+          <h4 style={{ color: "white", fontWeight: "bold" }}>
+            실제 프로젝트에 활용한 기술
+          </h4>
         </div>
-      </>
-    );
-  }
+        <div
+          style={{
+            display: "flex",
+            flexFlow: "row wrap",
+          }}
+        >
+          <img
+            src={node}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={js}
+            style={{
+              width: 100,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={csharp}
+            style={{
+              width: 100,
+              height: 100,
+              margin: 5,
+              backgroundColor: "white",
+            }}
+          />
+          <img
+            src={java}
+            style={{
+              width: 120,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={jsp}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={jquery}
+            style={{
+              width: 120,
+              height: 100,
+              margin: 5,
+              backgroundColor: "white",
+            }}
+          />
+          <img
+            src={htmlCss}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          {/* 프레임워크 */}
+          <img
+            src={react}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+
+          <img
+            src={reactNative}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={spring}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          {/* 그외 */}
+          <img
+            src={git}
+            style={{
+              width: 120,
+              height: 100,
+              margin: 5,
+              backgroundColor: "white",
+            }}
+          />
+          <img
+            src={github}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={fireBase}
+            style={{
+              width: 200,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={mssql}
+            style={{
+              width: 130,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={mysql}
+            style={{
+              width: 120,
+              height: 100,
+              margin: 5,
+              backgroundColor: "white",
+            }}
+          />
+          <img
+            src={mariaDB}
+            style={{
+              width: 170,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={vs}
+            style={{
+              width: 180,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={vsc}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={androidStudio}
+            style={{
+              width: 220,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={eclipse}
+            style={{
+              width: 200,
+              height: 100,
+              margin: 5,
+            }}
+          />
+        </div>
+        <div>
+          <h4 style={{ color: "white", fontWeight: "bold" }}>
+            이론으로 공부한 기술
+          </h4>
+        </div>
+        <div>
+          <img
+            src={python}
+            style={{
+              width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={typeScript}
+            style={{
+              width: 200,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={c}
+            style={{
+              width: 100,
+              height: 100,
+              margin: 5,
+              cursor: "pointer",
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Skills;

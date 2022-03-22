@@ -1,29 +1,32 @@
 import React from "react";
-import me from "../img/back.jpg";
-import me3 from "../img/me3.jpg";
-import work1_1 from "../img/work1_1.png";
-import work1_2 from "../img/work1_2.png";
-import work1_3 from "../img/work1_3.png";
-import work1_4 from "../img/work1_4.png";
-import work2_1 from "../img/work2_1.png";
-import work2_2 from "../img/work2_2.png";
-import work2_3 from "../img/work2_3.png";
-import work2_4 from "../img/work2_4.png";
-import work3_1 from "../img/work3_1.jpg";
-import work3_2 from "../img/work3_2.jpg";
-import work3_3 from "../img/work3_3.jpg";
-import work3_4 from "../img/work3_4.jpg";
-import work3_5 from "../img/work3_5.jpg";
-import work4_1 from "../img/work4_1.jpg";
-import work4_2 from "../img/work4_2.jpg";
-import work4_3 from "../img/work4_3.jpg";
+
+//작업물
+import work1_1 from "../img/portfolio/work1_1.png";
+import work1_2 from "../img/portfolio/work1_2.png";
+import work1_3 from "../img/portfolio/work1_3.png";
+import work1_4 from "../img/portfolio/work1_4.png";
+import work2_1 from "../img/portfolio/work2_1.png";
+import work2_2 from "../img/portfolio/work2_2.png";
+import work2_3 from "../img/portfolio/work2_3.png";
+import work2_4 from "../img/portfolio/work2_4.png";
+import work3_1 from "../img/portfolio/work3_1.jpg";
+import work3_2 from "../img/portfolio/work3_2.jpg";
+import work3_3 from "../img/portfolio/work3_3.jpg";
+import work3_4 from "../img/portfolio/work3_4.jpg";
+import work3_5 from "../img/portfolio/work3_5.jpg";
+import work4_1 from "../img/portfolio/work4_1.jpg";
+import work4_2 from "../img/portfolio/work4_2.jpg";
+import work4_3 from "../img/portfolio/work4_3.jpg";
 
 import jQuery from "jquery";
 // import "bxslider/dist/jquery.bxslider.js";
 window.window.$ = window.jQuery = jQuery;
 
+//https://alchera.ai/ 참고해서, 3차원 사진 돌리기 + 사진은 올라가고, 글은 스스륵 바뀌기 적용하자.
 class Portfolio extends React.Component {
   componentDidMount() {
+    $("nav:not(.bg-dark)").addClass("bg-dark");
+
     var defaults = {
       // GENERAL
       mode: "horizontal",
