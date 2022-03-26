@@ -29,7 +29,13 @@ const Home = () => {
       />
       <div className="header-wrapper" id="target2">
         <div className="main-info">
-          <h1>웹,앱 풀스텍 개발자 '김태은' 입니다.</h1>
+          <div>
+            <h5 style={{ textAlign: "left", color: "#e6d5b8" }}>
+              반갑습니다!😘😘
+            </h5>
+
+            <h1>웹,앱 풀스텍 개발자 '김태은' 입니다.</h1>
+          </div>
           <Typed
             className="react-typed"
             strings={[

@@ -8,6 +8,7 @@ import myIcon from "../img/myIcon.png";
 import DOTS from "vanta/dist/vanta.dots.min";
 //이미지
 import node from "../img/skills/node.jpg";
+import express from "../img/skills/express.png";
 import js from "../img/skills/js.png";
 import htmlCss from "../img/skills/htmlCss.png";
 import java from "../img/skills/java.png";
@@ -33,6 +34,7 @@ import eclipse from "../img/skills/eclipse.png";
 import c from "../img/skills/c.png";
 import python from "../img/skills/python.png";
 import typeScript from "../img/skills/typeScript.png";
+
 function Skills() {
   $("nav:not(.bg-dark)").addClass("bg-dark");
 
@@ -53,8 +55,10 @@ function Skills() {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0xbebebe,
-          color2: 0x222222,
+          color: 0xbebebe, // 점색깔
+          // color: 0xff8820,
+          color2: 0x202020, //배경색
+          // color2: 0x222222,
         })
       );
     }
@@ -84,9 +88,9 @@ function Skills() {
         }}
       >
         <div>
-          <h4 style={{ color: "white", fontWeight: "bold" }}>
-            실제 프로젝트에 활용한 기술
-          </h4>
+          <h5 style={{ color: "rgb(219, 217, 223)", fontWeight: "bold" }}>
+            # 실제 프로젝트에 활용한 기술
+          </h5>
         </div>
         <div
           style={{
@@ -98,6 +102,14 @@ function Skills() {
             src={node}
             style={{
               width: 150,
+              height: 100,
+              margin: 5,
+            }}
+          />
+          <img
+            src={express}
+            style={{
+              width: 190,
               height: 100,
               margin: 5,
             }}
@@ -263,9 +275,9 @@ function Skills() {
           />
         </div>
         <div>
-          <h4 style={{ color: "white", fontWeight: "bold" }}>
-            이론으로 공부한 기술
-          </h4>
+          <h5 style={{ color: "rgb(219, 217, 223)", fontWeight: "bold" }}>
+            # 이론으로 공부한 기술
+          </h5>
         </div>
         <div>
           <img
