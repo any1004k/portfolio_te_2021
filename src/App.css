@@ -81,7 +81,6 @@ nav:not(.bg-dark) a.nav-link {
 .navbar-nav > li > a.active {
   border-top: 0.1875rem solid rgb(240, 152, 20);
 }
-
 /********************** HOME ************************/
 .header-wrapper {
   position: relative;
@@ -116,9 +115,9 @@ nav:not(.bg-dark) a.nav-link {
   padding: 0.5rem;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #e6d5b8;
   /* border: 0.1rem solid rgb(240, 52, 52); */
-  border: 0.1rem solid #e6d5b8;
+  border: 0.1rem solid rgb(219, 217, 223);
   text-decoration: none;
   z-index: 5;
   cursor: pointer;
@@ -784,4 +783,24 @@ section:nth-child(4n - 1) {
   width: 27.5rem;
   height: 45rem;
   margin-bottom: 1rem;
+}
+/* 3d 캐로셀에 버튼 색깔 투명하게 */
+.react-3d-carousel .slider-container .slider-right div {
+  border-top: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+  border-left: 0px !important;
+}
+.react-3d-carousel .slider-container .slider-left div {
+  border-top: 0px !important;
+  border-right: 0px !important;
+  border-bottom: 0px !important;
+  border-left: 0px !important;
+}
+/* 글자 보였다 안보였다 */
+.fixed > div:not(.active) {
+  display: none;
+}
+.fixed > div.active {
+  display: block;
 }

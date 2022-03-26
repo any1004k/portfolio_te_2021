@@ -59,7 +59,7 @@ const Navbar = () => {
                 className="nav-link"
                 activeClassName="active"
               >
-                SKILLS
+                FEATURED
               </NavLink>
             </li>
             <li className="nav-item">
