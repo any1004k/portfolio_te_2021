@@ -344,52 +344,52 @@ function AboutMe() {
           </section>
           <section>
             <div className="section__content">
-              <p>프로그래머 김태은입니다.</p>
+              <p>백엔드를 주력으로 하는, 풀스텍 개발자 김태은입니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>항상 배우고 발전하는 자세로,</p>
+              <p>맡은 일은 무조건 완수해내는 책임감.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>고품질의 프로그램을 만들기 위해 최선을 다하겠습니다.</p>
+              <p>예리한 분석력.{"  "} 그리고,</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>turn me on to phantoms</p>
+              <p>문제를 해결 할 때까지 끝까지 물고 늘어지는 질긴 근성</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>I follow to the edge of the earth</p>
+              <p>이 세가지가 저의 특징입니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>and fall off</p>
+              <p>넘어지면 일어서고, </p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>I get eaten by the worms</p>
+              <p>또 넘어지면 또 일어서지만,</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>and weird fishes</p>
+              <p>점점 일어나는 속도가 빨라지고 있는</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>Hit the bottom and escape</p>
+              <p>발전하는 개발자, 김태은 입니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>escape</p>
+              <p>Dont't forget me. 감사합니다.</p>
             </div>
           </section>
         </div>

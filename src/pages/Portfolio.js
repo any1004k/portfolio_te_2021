@@ -88,7 +88,7 @@ import { gsap, ScrollTrigger, MotionPathPlugin } from "gsap/all";
 // 스티키가 위에 딱 붙으면, 글자 오른쪽 위에 숫자나타나고, 불들어오게 하기. 젤 왼쪽에 홈으로가기 버튼 추가하기.
 
 function Portfolio() {
-  // 오른쪽 네비게이션 동글뱅이
+  $("nav:not(.bg-dark)").addClass("bg-dark");
 
   let li8 = useRef();
   let li7 = useRef();
@@ -629,7 +629,7 @@ function Portfolio() {
             marginBottom: 80,
           }}
         >
-          <p className="" ref={n8} style={{ marginRight: 10 }}>
+          <p className="active" ref={n8} style={{ marginRight: 10 }}>
             1
           </p>
           <p className="" ref={n7} style={{ marginRight: 10 }}>
@@ -696,8 +696,8 @@ function Portfolio() {
           <hr />
           <div>
             <label>
-              · 기여도 : 99% (ui디자인, db설계,개발, 배포,운영 담당함(로고
-              디자인 제외))
+              · 기여도 : 98% (ui디자인, db설계,개발, 배포,운영 담당함(로고
+              디자인, 배경화면 제외))
             </label>
             <br />
             <label>· 제작기간 : 2021-09 ~ 2021-12</label>
@@ -768,7 +768,10 @@ function Portfolio() {
           <h2 style={{ fontWeight: "bold" }}>Android 앱</h2>
           <hr />
           <div>
-            <label>· 기여도 : 100%</label>
+            <label>
+              · 기여도 : 99%(요구사항수집, ui설계, db설계, 코드작성, apk파일
+              배포(로고디자인 제외))
+            </label>
             <br />
             <label>· 제작기간 : 2021.02</label>
             <br />
@@ -834,10 +837,12 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li1} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>Java Spring 웹싸이트</h2>
+          <h2 style={{ fontWeight: "bold" }}>
+            Java Spring 웹싸이트 (토이프로젝트)
+          </h2>
           <hr />
           <div>
-            <label>· 기여도 : 100% (ui설계, db설계, 코드작성)</label>
+            <label>· 기여도 : 100%</label>
             <br />
             <label>· 제작기간 : 2020-08</label>
             <br />
