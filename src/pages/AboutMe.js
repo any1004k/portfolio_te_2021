@@ -344,7 +344,7 @@ function AboutMe() {
           </section>
           <section>
             <div className="section__content">
-              <p>백엔드를 주력으로 하는, 풀스텍 개발자 김태은입니다.</p>
+              <p>백엔드를 주력으로 하는, 풀스택 개발자 김태은입니다.</p>
             </div>
           </section>
           <section>
@@ -364,32 +364,43 @@ function AboutMe() {
           </section>
           <section>
             <div className="section__content">
-              <p>이 세가지가 저의 특징입니다.</p>
+              <p>이 세가지가 저의 장점입니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>넘어지면 일어서고, </p>
+              <p>"나의 유일한 경쟁자는 어제의 나다. "</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>또 넘어지면 또 일어서지만,</p>
+              <p>
+                "눈을 뜨면 어제 살았던 나보다 더 가슴 벅차고 열정적인 하루를
+                살려고 노력한다. 연습실에 들어서며 어제 한 연습보다 더 강도 높은
+                연습을 한 번, 1분이라도 더 하기로 마음먹는다."
+              </p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>점점 일어나는 속도가 빨라지고 있는</p>
+              <p>
+                {" "}
+                "어제를 넘어선 오늘을 사는 것, 이것이 내 삶의 모토다." -
+                발레리나 강수진 -
+              </p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>발전하는 개발자, 김태은 입니다.</p>
+              <p>
+                안주하지 않고, 남과 비교 하지 않고, 우직히 앞으로 나아가는
+                개발자가 되겠습니다.
+              </p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>Dont't forget me. 감사합니다.</p>
+              <p>감사합니다.</p>
             </div>
           </section>
         </div>

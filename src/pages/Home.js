@@ -34,7 +34,7 @@ const Home = () => {
               반갑습니다!😘😘
             </h5>
 
-            <h1>웹,앱 풀스텍 개발자 '김태은' 입니다.</h1>
+            <h1>웹,앱 풀스택 개발자 '김태은' 입니다.</h1>
           </div>
           <Typed
             className="react-typed"
