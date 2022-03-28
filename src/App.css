@@ -804,3 +804,24 @@ section:nth-child(4n - 1) {
 .fixed > div.active {
   display: block;
 }
+/* .fixed > div.active > label:not(.active) {
+  color: rgb(245, 245, 245);
+} */
+.fixed h2 {
+  color: rgb(245, 245, 245);
+}
+.fixed label {
+  color: rgb(206, 205, 205);
+}
+.fixed hr {
+  color: rgb(245, 245, 245);
+}
+.fixed p:not(.active) {
+  color: gray;
+  font-size: 17px;
+}
+.fixed p.active {
+  color: rgb(252, 125, 7);
+  font-size: 50px;
+  font-weight: bold;
+}

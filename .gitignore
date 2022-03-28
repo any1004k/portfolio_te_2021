@@ -10,7 +10,8 @@
 
 # production
 /build
-/img
+/src/img
+/.firebase
 
 # misc
 .DS_Store

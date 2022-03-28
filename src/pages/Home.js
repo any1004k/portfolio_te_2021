@@ -59,7 +59,7 @@ const Home = () => {
           <p
             href="/Contacts"
             className="contact_button"
-            onClick={() => alert("채용해 주셔서 감사합니다.")}
+            onClick={() => alert("٩(ˊᗜˋ*)و  ଘ(੭ˊ꒳ ˋ)੭✧")}
           >
             채용하기
           </p>

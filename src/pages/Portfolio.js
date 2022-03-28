@@ -1,4 +1,7 @@
 import React, { useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
+import myIcon from "../img/myIcon.png";
 
 //3d캐로셀
 import { Carousel } from "3d-react-carousal";
@@ -87,7 +90,6 @@ import { gsap, ScrollTrigger, MotionPathPlugin } from "gsap/all";
 function Portfolio() {
   // 오른쪽 네비게이션 동글뱅이
 
-  let top = useRef();
   let li8 = useRef();
   let li7 = useRef();
   let li6 = useRef();
@@ -96,6 +98,14 @@ function Portfolio() {
   let li3 = useRef();
   let li2 = useRef();
   let li1 = useRef();
+  let n8 = useRef();
+  let n7 = useRef();
+  let n6 = useRef();
+  let n4 = useRef();
+  let n3 = useRef();
+  let n5 = useRef();
+  let n2 = useRef();
+  let n1 = useRef();
 
   // 케로셀에 이미지
   let slides_jang = [
@@ -183,22 +193,39 @@ function Portfolio() {
     console.log("callback", index);
   };
 
-  const section = document.querySelector(".top");
+  const top = document.querySelector(".top");
+  // const section = [...document.querySelectorAll(".section")];
 
   useEffect(() => {
     Aos.init({ duration: 500 }); //이거 없으면 작동이 안되는듯?
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
-      trigger: section,
+      trigger: top,
       start: "top top",
-      onEnter: () => checkVisible(),
-      onEnterBack: () => checkVisible(),
-      onLeave: () => checkVisible(),
-      onLeaveBack: () => checkVisible(),
-      onUpdate: () => checkVisible(),
+      onEnter: () => {
+        // 스크롤 내릴때
+        checkVisible();
+      },
+      onEnterBack: () => {
+        checkVisible();
+      },
+      onLeave: () => {
+        checkVisible();
+      },
+      onLeaveBack: () => {
+        // 위로 올라가서 꼭대기 닿았을 때.
+        checkVisible();
+      },
+      onUpdate: () => {
+        // 스크롤 내릴때 (다른 페이지 가면, on update 되는디.)
+        checkVisible();
+      },
     });
-  }, []);
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  });
 
   function checkVisible() {
     // let viewportHeight = window.$(window).height(); // Viewport Height
@@ -224,27 +251,27 @@ function Portfolio() {
 
     if (Slides_tpyApp + Slides_tpyApp_Height > scrolltop + 300) {
       showText("li8");
-    } else if (Slides_payflow + Slides_payflow_Height > scrolltop + 300) {
+    } else if (Slides_payflow + Slides_payflow_Height > scrolltop + 100) {
       showText("li7");
     } else if (
       Slides_tpyHomepage + Slides_tpyHomepage_Height >
-      scrolltop + 300
+      scrolltop + 200
     ) {
       showText("li6");
-    } else if (Slides_homePage + Slides_homePage_Height > scrolltop + 300) {
+    } else if (Slides_homePage + Slides_homePage_Height > scrolltop + 200) {
       showText("li5");
     } else if (
       Slides_YHscheduler + Slides_YHscheduler_Height >
-      scrolltop + 300
+      scrolltop + 200
     ) {
       showText("li4");
-    } else if (Slides_seojin + Slides_seojin_Height > scrolltop + 300) {
+    } else if (Slides_seojin + Slides_seojin_Height > scrolltop + 200) {
       showText("li3");
     }
     //
-    else if (Slides_MES + Slides_MES_Height > scrolltop + 300) {
+    else if (Slides_MES + Slides_MES_Height > scrolltop + 200) {
       showText("li2");
-    } else if (Slides_jang + Slides_jang_Height > scrolltop + 300) {
+    } else if (Slides_jang + Slides_jang_Height > scrolltop + 200) {
       showText("li1");
     }
   }
@@ -252,67 +279,25 @@ function Portfolio() {
   function showText(el) {
     if (el != aa) {
       aa = el;
-      // alert(aa);
       switch (el) {
-        case "li1":
-          li1.current.className = "active";
+        case "li8":
+          li1.current.className = "";
           li2.current.className = "";
           li3.current.className = "";
           li4.current.className = "";
           li5.current.className = "";
           li6.current.className = "";
           li7.current.className = "";
-          li8.current.className = "";
-          break;
-        case "li2":
-          li1.current.className = "";
-          li2.current.className = "active";
-          li3.current.className = "";
-          li4.current.className = "";
-          li5.current.className = "";
-          li6.current.className = "";
-          li7.current.className = "";
-          li8.current.className = "";
-          break;
-        case "li3":
-          li1.current.className = "";
-          li2.current.className = "";
-          li3.current.className = "active";
-          li4.current.className = "";
-          li5.current.className = "";
-          li6.current.className = "";
-          li7.current.className = "";
-          li8.current.className = "";
-          break;
-        case "li4":
-          li1.current.className = "";
-          li2.current.className = "";
-          li3.current.className = "";
-          li4.current.className = "active";
-          li5.current.className = "";
-          li6.current.className = "";
-          li7.current.className = "";
-          li8.current.className = "";
-          break;
-        case "li5":
-          li1.current.className = "";
-          li2.current.className = "";
-          li3.current.className = "";
-          li4.current.className = "";
-          li5.current.className = "active";
-          li6.current.className = "";
-          li7.current.className = "";
-          li8.current.className = "";
-          break;
-        case "li6":
-          li1.current.className = "";
-          li2.current.className = "";
-          li3.current.className = "";
-          li4.current.className = "";
-          li5.current.className = "";
-          li6.current.className = "active";
-          li7.current.className = "";
-          li8.current.className = "";
+          li8.current.className = "active";
+
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "active";
           break;
         case "li7":
           li1.current.className = "";
@@ -323,16 +308,123 @@ function Portfolio() {
           li6.current.className = "";
           li7.current.className = "active";
           li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "active";
+          n8.current.className = "";
           break;
-        case "li8":
+        case "li6":
           li1.current.className = "";
+          li2.current.className = "";
+          li3.current.className = "";
+          li4.current.className = "";
+          li5.current.className = "";
+          li6.current.className = "active";
+          li7.current.className = "";
+          li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "active";
+          n7.current.className = "";
+          n8.current.className = "";
+          break;
+        case "li5":
+          li1.current.className = "";
+          li2.current.className = "";
+          li3.current.className = "";
+          li4.current.className = "";
+          li5.current.className = "active";
+          li6.current.className = "";
+          li7.current.className = "";
+          li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "active";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "";
+          break;
+        case "li4":
+          li1.current.className = "";
+          li2.current.className = "";
+          li3.current.className = "";
+          li4.current.className = "active";
+          li5.current.className = "";
+          li6.current.className = "";
+          li7.current.className = "";
+          li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "active";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "";
+          break;
+        case "li3":
+          li1.current.className = "";
+          li2.current.className = "";
+          li3.current.className = "active";
+          li4.current.className = "";
+          li5.current.className = "";
+          li6.current.className = "";
+          li7.current.className = "";
+          li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "";
+          n3.current.className = "active";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "";
+          break;
+        case "li2":
+          li1.current.className = "";
+          li2.current.className = "active";
+          li3.current.className = "";
+          li4.current.className = "";
+          li5.current.className = "";
+          li6.current.className = "";
+          li7.current.className = "";
+          li8.current.className = "";
+          n1.current.className = "";
+          n2.current.className = "active";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "";
+          break;
+        case "li1":
+          li1.current.className = "active";
           li2.current.className = "";
           li3.current.className = "";
           li4.current.className = "";
           li5.current.className = "";
           li6.current.className = "";
           li7.current.className = "";
-          li8.current.className = "active";
+          li8.current.className = "";
+          n1.current.className = "active";
+          n2.current.className = "";
+          n3.current.className = "";
+          n4.current.className = "";
+          n5.current.className = "";
+          n6.current.className = "";
+          n7.current.className = "";
+          n8.current.className = "";
+
           break;
       }
     }
@@ -342,27 +434,29 @@ function Portfolio() {
       className="top"
       style={{
         width: "100%",
-        height: "1000vh",
+        height: "1030vh",
         display: "flex",
         flexDirection: "row",
-        backgroundColor: "gray",
+        backgroundColor: "#212121",
         paddingTop: window.innerHeight / 5,
       }}
     >
-      {/* 바탕과 함께 스크롤되는 오른쪽 스크롤 창 */}
+      {/* 왼쪽 사진 있는 창. */}
       <div
         style={{
           width: "50%",
           height: "100vh",
+          marginLeft: 100,
         }}
       >
         <div
+          className="section"
           id="Slides_tpyApp"
           style={{
             padding: "5% 10%",
             width: "70%",
             height: "130%",
-            backgroundColor: "#F7F5F2",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
             marginBottom: "150px",
           }}
@@ -375,14 +469,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_payflow"
           style={{
             padding: "8% 0%",
             width: "100%",
             height: "55%",
-            backgroundColor: "#F7F5F2",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "300px",
           }}
         >
           <Carousel
@@ -393,14 +488,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_tpyHomepage"
           style={{
             padding: "10% 0%",
             width: "100%",
             height: "120%",
-            backgroundColor: "#F7F5F2",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "300px",
           }}
         >
           <Carousel
@@ -411,14 +507,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_homePage"
           style={{
-            padding: "5% 10%",
+            padding: "8% 0%",
             width: "100%",
-            height: "65%",
-            backgroundColor: "#F7F5F2",
+            height: "55%",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "150px",
+            marginBottom: "300px",
           }}
         >
           <Carousel
@@ -429,14 +526,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_YHscheduler"
           style={{
             padding: "5% 10%",
             width: "70%",
-            height: "120%",
-            backgroundColor: "#F7F5F2",
+            height: "80%",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "150px",
+            marginBottom: "200px",
           }}
         >
           <Carousel
@@ -447,14 +545,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_seojin"
           style={{
             padding: "5% 10%",
             width: "70%",
-            height: "120%",
-            backgroundColor: "#F7F5F2",
+            height: "80%",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "150px",
+            marginBottom: "200px",
           }}
         >
           <Carousel
@@ -465,14 +564,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_MES"
           style={{
-            padding: "5% 10%",
+            padding: "8% 0%",
             width: "100%",
-            height: "65%",
-            backgroundColor: "#F7F5F2",
+            height: "55%",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "150px",
+            marginBottom: "200px",
           }}
         >
           <Carousel
@@ -483,14 +583,15 @@ function Portfolio() {
           />
         </div>
         <div
+          className="section"
           id="Slides_jang"
           style={{
-            padding: "5% 10%",
+            padding: "8% 0%",
             width: "100%",
-            height: "130%",
-            backgroundColor: "#F7F5F2",
+            height: "120%",
+            backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "150px",
+            marginBottom: "200px",
           }}
         >
           <Carousel
@@ -507,84 +608,272 @@ function Portfolio() {
         style={{
           width: "50%",
           height: "55vh",
-          backgroundColor: "yellow",
+          // backgroundColor: "yellow",
           position: "sticky",
           top: 0,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
+          justifyContent: "flex-start",
+          paddingLeft: 50,
+          paddingRight: 100,
         }}
       >
+        <div
+          className="active"
+          style={{
+            display: "flex",
+            flexFlow: "row nowrap",
+            paddingTop: 30,
+            justifyContent: "right",
+            alignItems: "baseline",
+            marginBottom: 80,
+          }}
+        >
+          <p className="" ref={n8} style={{ marginRight: 10 }}>
+            1
+          </p>
+          <p className="" ref={n7} style={{ marginRight: 10 }}>
+            2
+          </p>
+          <p className="" ref={n6} style={{ marginRight: 10 }}>
+            3
+          </p>
+          <p className="" ref={n5} style={{ marginRight: 10 }}>
+            4
+          </p>
+          <p className="" ref={n4} style={{ marginRight: 10 }}>
+            5
+          </p>
+          <p className="" ref={n3} style={{ marginRight: 10 }}>
+            6
+          </p>
+          <p className="" ref={n2} style={{ marginRight: 10 }}>
+            7
+          </p>
+          <p className="" ref={n1} style={{ marginRight: 10 }}>
+            8
+          </p>
+        </div>
+
         <div className="active" ref={li8} data-aos="fade-up">
-          <h2>React Native 앱(node.js)</h2>
+          <h2 style={{ fontWeight: "bold" }}>React Native 앱(node.js)</h2>
+          <hr />
           <div>
-            <h5>기여도</h5>
-            <h5>제작기간</h5>
-            <h5>기능</h5>
+            <label>
+              · 기여도 : 99% (ui디자인, db설계,개발, 배포,운영 담당함 (로고
+              디자인 제외))
+            </label>
+            <br />
+            <label>· 제작기간 : 2021-12 ~ 2022-02</label>
+            <br />
+            <label>
+              · 기술스택 : React Native, javascript, node.js, express.js,
+              mariaDB,firebase
+            </label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label> ┖ push 알람 기능.</label>
+            <br />
+            <label> ┖ 자동로그인 기능.</label>
+            <br />
+            <label> ┖ qr 코드 인식 기능.</label>
+            <br />
+            <label> ┖ 데이터 join등을 통해 새로운 데이터 도출.</label>
+            <br />
+            <label> ┖ db 프로시저를 활용하여 일괄처리 기능.</label>
+            <br />
+            <label> ┖ 이미지 첨부 및 이미지 확대보기 기능.</label>
+            <br />
+            <label> ┖ 데이터를 엑셀로 변환.</label>
+            <br />
+            <label>· 현재 apple 및 안드로이드에 등록하여 운영중.</label>
+            <br />
           </div>
         </div>
         <div className="" ref={li7} data-aos="fade-up">
-          <h2>.Net winforms 데스크탑앱(C#)</h2>
+          <h2 style={{ fontWeight: "bold" }}>.Net winforms 데스크탑앱(C#)</h2>
+          <hr />
           <div>
-            <h5>기여도</h5>
-            <h5>제작기간</h5>
-            <h5>기능</h5>
+            <label>
+              · 기여도 : 99% (ui디자인, db설계,개발, 배포,운영 담당함(로고
+              디자인 제외))
+            </label>
+            <br />
+            <label>· 제작기간 : 2021-09 ~ 2021-12</label>
+            <br />
+            <label>· 기술스택 : C#. .net window forms, mssql</label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label>
+              {" "}
+              ┖ 통장별 입금, 출금, 잔액 CRUD 기능 (통장 중간에 입금,출금을
+              입력하더라도, 전체 잔액이 맞도록 설계)
+            </label>
+            <br />
+            <label> ┖ 지출내역, 대출내역, 직원 월급 관리 등.</label>
+            <br />
+            <label>
+              ┖ 데이터 입력하면, 관련된 데이터 Join 하여 새로운 데이터 도출.
+            </label>
+            <br />
+            <label> ┖ DB 프로시저 기능으로, 일괄 처리 기능.</label>
+            <br />
+            <label> · 현재 운영중.</label>
+            <br />
           </div>
         </div>
         <div className="" ref={li6} data-aos="fade-up">
-          <h2>React 웹(node.js)</h2>
+          <h2 style={{ fontWeight: "bold" }}>React 웹(node.js)</h2>
+          <hr />
           <div>
-            <h5>기여도</h5>
-            <h5>제작기간</h5>
-            <h5>기능</h5>
+            <label>
+              · 기여도 : 60% (db설계,개발, 배포,운영 담당함(디자인 및 UI설계
+              제외))
+            </label>
+            <br />
+            <label>· 제작기간 : 2021-06 ~ 2021-08</label>
+            <br />
+            <label>
+              · 기술스택 : React.js, javascript, node.js, express.js, mariaDB
+            </label>
+            <br />
+            <label>
+              · 홈페이지 :{" "}
+              <a href="http://www.podc.co.kr" target={"_blank"}>
+                http://www.podc.co.kr
+              </a>
+            </label>
+            <br />
+            <label> · 현재 운영중.</label>
+            <br />
           </div>
         </div>
-        <div className="" ref={li5}>
-          <p>
-            작업명 : 개인 홈페이지(단독)
+        <div className="" ref={li5} data-aos="fade-up">
+          <h2 style={{ fontWeight: "bold" }}>개인 PR 홈페이지</h2>
+          <hr />
+          <div>
+            <label>· 기여도 : 100%</label>
             <br />
-            작업일 : 2021.05
+            <label>· 제작기간 : 2021.05</label>
             <br />
-            작업도구 : react, node.js, firebase 등
+            <label>· 기술스택 : React.js, javascript, firebase</label>
             <br />
-            깃허브 :{" "}
-            <a
-              href="https://github.com/any1004k/portfolio_te_2021"
-              target="_blank"
+            <label> · 현재 운영중.</label>
+            <br />
+          </div>
+        </div>
+        <div className="" ref={li4} data-aos="fade-up">
+          <h2 style={{ fontWeight: "bold" }}>Android 앱</h2>
+          <hr />
+          <div>
+            <label>· 기여도 : 100%</label>
+            <br />
+            <label>· 제작기간 : 2021.02</label>
+            <br />
+            <label>· 기술스택 : android studio, java, mysql</label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label> ┖ 프로젝트 일정 관리를 위한 CRUD</label>
+            <br />
+          </div>
+        </div>
+        <div className="" ref={li3} data-aos="fade-up">
+          <h2 style={{ fontWeight: "bold" }}>Android 앱</h2>
+          <hr />
+          <div>
+            <label>· 기여도 : 100%</label>
+            <br />
+            <label>· 제작기간 : 2021.01</label>
+            <br />
+            <label>· 기술스택 : android studio, java, mysql</label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label> ┖ 냉장고 온도값을 가져와서 그래프로 보여주는 기능.</label>
+            <br />
+            <label> ┖ 냉장고 온도값을 냉장고별로 분류하여 보여주는 기능.</label>
+            <br />
+            <label> ┖ 기준온도값을 사용자가 설정할 수 있는 기능.</label>
+            <br />
+            <label>
+              {" "}
+              ┖ 냉장고 온도가 기준 온도값을 우회하는 경우, 텍스트 색깔을 바꿔
+              눈에 띄기 쉽게 보여주는 기능.
+            </label>
+            <br />
+          </div>
+        </div>
+        <div className="" ref={li2} data-aos="fade-up">
+          <h2 style={{ fontWeight: "bold" }}>.Net window forms 데스크탑앱</h2>
+          <hr />
+          <div>
+            <label>· 기여도 : 30% (ui설계, db설계, 코드작성)</label>
+            <br />
+            <label>· 제작기간 : 2021-01 ~ 2021-03</label>
+            <br />
+            <label>
+              · 기술스택 : C#, .NET framework winform,devexpress, mariaDB
+            </label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label>
+              {" "}
+              ┖ kpi 관리, 수주관리 등 10여개의 화면 UI 제작 및 CRUD 기능 구현.
+            </label>
+            <br />
+            <label>
+              {" "}
+              ┖ 사용자 편의를 도모하기 위하여, 세세한 기능 추가. (ex. 리스트
+              전체선택, 수정후 원래 row로 돌아오기 등등)
+            </label>
+            <br />
+          </div>
+        </div>
+        <div className="" ref={li1} data-aos="fade-up">
+          <h2 style={{ fontWeight: "bold" }}>Java Spring 웹싸이트</h2>
+          <hr />
+          <div>
+            <label>· 기여도 : 100% (ui설계, db설계, 코드작성)</label>
+            <br />
+            <label>· 제작기간 : 2020-08</label>
+            <br />
+            <label>
+              · 기술스택 : Java,Spring,mysql,Apache
+              Tomcat,JavaScript,CSS,HTML5,jQuery
+            </label>
+            <br />
+            <label>· 기능 : </label>
+            <br />
+            <label> ┖ 자영업 사장님들의 커뮤니티 싸이트</label>
+            <br />
+            <label>┖ 게시판 기능</label>
+            <br />
+            <label> ┖ 댓글기능</label>
+            <br />
+            <label> ┖ 뉴스 api 받아와 게시</label>
+            <br />
+            <label> ┖ 회원가입 및 로그인 기능.</label>
+            <br />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+            }}
+          >
+            <NavLink
+              to={`/`}
+              className="navbar-brand first"
+              activeClassName="active"
             >
-              https://github.com/any1004k/portfolio_te_2021
-            </a>
-          </p>
-        </div>
-        <div className="" ref={li4}>
-          <p>
-            작업명 : 프로젝트 일정관리 앱(단독)
-            <br />
-            작업일 : 2021.02
-            <br />
-            작업도구 : android studio, java, mysql
-          </p>
-        </div>
-        <div className="" ref={li3}>
-          <p>
-            작업명 : 냉장고 온도관리용 알람 앱(단독)
-            <br />
-            작업일 : 2021.01
-            <br />
-            작업도구 : android studio, java, mysql
-          </p>
-        </div>
-        <div className="" ref={li2}>
-          <p>
-            작업명 : 스마트공장 관리 시스템 (참여)
-            <br />
-            작업일 : 2020.9~ 2020.12
-            <br />
-            작업도구 : vs2017, C#, devexpress, mysql 등
-          </p>
-        </div>
-        <div className="" ref={li1}>
-          li1 글
+              <img className="logoLion" src={myIcon}></img>
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

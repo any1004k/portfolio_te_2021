@@ -4,7 +4,8 @@ import myIcon from "../img/myIcon.png";
 // 리엑트 폰트아썸을 가져오기.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter, Link, NavLink } from "react-router-dom";
+// import { BrowserRouter, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
