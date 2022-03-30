@@ -447,18 +447,17 @@ function Portfolio() {
           width: "50%",
           height: "100vh",
           marginLeft: 100,
+          paddingTop: "20%",
         }}
       >
         <div
           className="section"
           id="Slides_tpyApp"
           style={{
-            padding: "5% 10%",
             width: "70%",
-            height: "130%",
-            backgroundColor: "#F6F6F6",
-            margin: "0 auto",
-            marginBottom: "150px",
+            height: "170%",
+            margin: "0px auto",
+            marginBottom: "350px",
           }}
         >
           <Carousel
@@ -475,9 +474,9 @@ function Portfolio() {
             padding: "8% 0%",
             width: "100%",
             height: "55%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "300px",
+            marginBottom: "400px",
           }}
         >
           <Carousel
@@ -494,9 +493,9 @@ function Portfolio() {
             padding: "10% 0%",
             width: "100%",
             height: "120%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "300px",
+            marginBottom: "400px",
           }}
         >
           <Carousel
@@ -513,9 +512,9 @@ function Portfolio() {
             padding: "8% 0%",
             width: "100%",
             height: "55%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "300px",
+            marginBottom: "400px",
           }}
         >
           <Carousel
@@ -532,9 +531,9 @@ function Portfolio() {
             padding: "5% 10%",
             width: "70%",
             height: "80%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "400px",
           }}
         >
           <Carousel
@@ -551,9 +550,9 @@ function Portfolio() {
             padding: "5% 10%",
             width: "70%",
             height: "80%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "400px",
           }}
         >
           <Carousel
@@ -570,9 +569,9 @@ function Portfolio() {
             padding: "8% 0%",
             width: "100%",
             height: "55%",
-            backgroundColor: "#F6F6F6",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "350px",
           }}
         >
           <Carousel
@@ -588,10 +587,10 @@ function Portfolio() {
           style={{
             padding: "8% 0%",
             width: "100%",
-            height: "120%",
-            backgroundColor: "#F6F6F6",
+            height: "100%",
+            //backgroundColor: "#F6F6F6",
             margin: "0 auto",
-            marginBottom: "200px",
+            marginBottom: "50px",
           }}
         >
           <Carousel
@@ -656,7 +655,7 @@ function Portfolio() {
         </div>
 
         <div className="active" ref={li8} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>React Native 앱(node.js)</h2>
+          <h2>React Native 앱(node.js)</h2>
           <hr />
           <div>
             <label>
@@ -692,7 +691,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li7} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>.Net winforms 데스크탑앱(C#)</h2>
+          <h2>.Net winforms 데스크탑앱(C#)</h2>
           <hr />
           <div>
             <label>
@@ -725,7 +724,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li6} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>React 웹(node.js)</h2>
+          <h2>React 웹(node.js)</h2>
           <hr />
           <div>
             <label>
@@ -751,7 +750,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li5} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>개인 PR 홈페이지</h2>
+          <h2>개인 PR 홈페이지</h2>
           <hr />
           <div>
             <label>· 기여도 : 100%</label>
@@ -765,7 +764,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li4} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>Android 앱</h2>
+          <h2>Android 앱</h2>
           <hr />
           <div>
             <label>
@@ -784,7 +783,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li3} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>Android 앱</h2>
+          <h2>Android 앱</h2>
           <hr />
           <div>
             <label>· 기여도 : 100%</label>
@@ -810,7 +809,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li2} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>.Net window forms 데스크탑앱</h2>
+          <h2>.Net window forms 데스크탑앱</h2>
           <hr />
           <div>
             <label>· 기여도 : 30% (ui설계, db설계, 코드작성)</label>
@@ -837,9 +836,7 @@ function Portfolio() {
           </div>
         </div>
         <div className="" ref={li1} data-aos="fade-up">
-          <h2 style={{ fontWeight: "bold" }}>
-            Java Spring 웹싸이트 (토이프로젝트)
-          </h2>
+          <h2>Java Spring 웹싸이트 (토이프로젝트)</h2>
           <hr />
           <div>
             <label>· 기여도 : 100%</label>
