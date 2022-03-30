@@ -36,7 +36,7 @@ import python from "../img/skills/python.png";
 import typeScript from "../img/skills/typeScript.png";
 
 function Skills() {
-  $("nav:not(.bg-dark)").addClass("bg-dark");
+  //$("nav:not(.bg-dark)").addClass("bg-dark");
 
   const [vantaEffect, setVantaEffect] = React.useState(0);
   const myRef = React.useRef(null);

@@ -83,12 +83,11 @@ import $ from "jquery";
 import Aos from "aos";
 import "aos/dist/aos.css";
 //gsap & 스크롤매직
-import { gsap, ScrollTrigger, MotionPathPlugin } from "gsap/all";
+import { gsap, ScrollTrigger } from "gsap/all";
 //https://alchera.ai/ 참고해서, 3차원 사진 돌리기 + 사진은 올라가고, 글은 스스륵 바뀌기 적용하자.
-// 스티키가 위에 딱 붙으면, 글자 오른쪽 위에 숫자나타나고, 불들어오게 하기. 젤 왼쪽에 홈으로가기 버튼 추가하기.
 
 function Portfolio() {
-  $("nav:not(.bg-dark)").addClass("bg-dark");
+  //$("nav:not(.bg-dark)").addClass("bg-dark");
 
   let li8 = useRef();
   let li7 = useRef();
