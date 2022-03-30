@@ -82,6 +82,11 @@ nav:not(.bg-dark) a.nav-link {
 .navbar-nav > li > a.active {
   border-top: 0.1875rem solid rgb(240, 152, 20);
 }
+
+.nav-item a {
+  font-size: 17px;
+}
+
 /********************** HOME ************************/
 .header-wrapper {
   position: relative;
@@ -115,7 +120,7 @@ nav:not(.bg-dark) a.nav-link {
 .main-info > p {
   font-family: "Do Hyeon", sans-serif;
 }
-.main-info h5 {
+.main-info h4 {
   font-family: "Do Hyeon", sans-serif;
 }
 .contact_button {
@@ -132,7 +137,8 @@ nav:not(.bg-dark) a.nav-link {
 .react-typed {
   font-size: 2rem;
   color: rgb(219, 217, 223);
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-family: "Do Hyeon", sans-serif;
 }
 
 /* 파티클*/
@@ -150,6 +156,9 @@ nav:not(.bg-dark) a.nav-link {
 }
 
 /********************** CONTACTS ************************/
+.section__content p {
+  font-family: "Do Hyeon", sans-serif;
+}
 .table-DIY {
   margin-top: 5rem;
   margin-bottom: 3rem;
@@ -741,7 +750,16 @@ section:nth-child(4n - 1) {
 } */
 
 /**********************Skills ************************/
-
+.skills p {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 30px !important;
+}
+.skills hr {
+  height: 5px !important;
+  background-color: white !important;
+  width: 100px;
+  opacity: 1 !important;
+}
 /**********************Portfolio ************************/
 .top {
   font-family: "Do Hyeon", sans-serif;

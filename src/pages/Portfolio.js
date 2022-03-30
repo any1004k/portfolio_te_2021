@@ -438,7 +438,6 @@ function Portfolio() {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "#212121",
-        paddingTop: window.innerHeight / 5,
       }}
     >
       {/* 왼쪽 사진 있는 창. */}
@@ -447,7 +446,7 @@ function Portfolio() {
           width: "50%",
           height: "100vh",
           marginLeft: 100,
-          paddingTop: "20%",
+          paddingTop: "150px",
         }}
       >
         <div
@@ -622,10 +621,10 @@ function Portfolio() {
           style={{
             display: "flex",
             flexFlow: "row nowrap",
-            paddingTop: 30,
+            paddingTop: "50px",
             justifyContent: "right",
             alignItems: "baseline",
-            marginBottom: 80,
+            marginBottom: "50px",
           }}
         >
           <p className="active" ref={n8} style={{ marginRight: 10 }}>

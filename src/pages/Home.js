@@ -35,12 +35,15 @@ const Home = () => {
       <div className="header-wrapper" id="target2">
         <div className="main-info">
           <div>
-            <h5
+            <h4
               data-aos="fade-up"
-              style={{ textAlign: "left", color: "rgba(218 ,218 ,218,1)" }}
+              style={{
+                textAlign: "left",
+                color: "rgba(218 ,218 ,218,1)",
+              }}
             >
               반갑습니다!
-            </h5>
+            </h4>
 
             <h1 data-aos="fade-up" data-aos-delay="1000">
               웹,앱 풀스택 개발자 '김태은' 입니다.

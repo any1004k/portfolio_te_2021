@@ -69,6 +69,7 @@ function Skills() {
 
   return (
     <div
+      className="skills"
       ref={myRef}
       style={{
         width: "100%",
@@ -88,9 +89,8 @@ function Skills() {
         }}
       >
         <div>
-          <h5 style={{ color: "rgb(219, 217, 223)", fontWeight: "bold" }}>
-            # 실제 프로젝트에 활용한 기술
-          </h5>
+          <p style={{ color: "white" }}> 실제 프로젝트에 활용한 기술</p>
+          <hr />
         </div>
         <div
           style={{
@@ -275,9 +275,8 @@ function Skills() {
           />
         </div>
         <div>
-          <h5 style={{ color: "rgb(219, 217, 223)", fontWeight: "bold" }}>
-            # 이론으로 공부한 기술
-          </h5>
+          <p style={{ color: "white" }}>이론으로 공부한 기술</p>
+          <hr />
         </div>
         <div>
           <img
