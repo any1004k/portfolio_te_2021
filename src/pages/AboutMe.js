@@ -344,57 +344,52 @@ function AboutMe() {
           </section>
           <section>
             <div className="section__content">
-              <p>백엔드를 주력으로 하는, 풀스택 개발자 김태은입니다.</p>
+              <p>제 홈페이지에 방문해주셔서 감사합니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>맡은 일은 무조건 완수해내는 책임감.</p>
+              <p>제가 좋아하는 명언이 있습니다.</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>예리한 분석력.{"  "} 그리고,</p>
+              <p> "앞으로 20년 후에 당신은 자신이 한 일보다는"</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>문제를 해결 할 때까지 끝까지 물고 늘어지는 질긴 근성</p>
+              <p>"하지 않은 일로 인해 더 실망하게 될 것이다."</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>이 세가지가 저의 장점입니다.</p>
+              <p>"그러니 밧줄을 풀고 안전한 항구를 벗어나 항해를 떠나라."</p>
             </div>
           </section>
           <section>
             <div className="section__content">
-              <p>"나의 유일한 경쟁자는 어제의 나다. "</p>
+              <p>"돛에 무역풍을 가득 담고 탐험하고, 꿈꾸고 발견하라."</p>
+            </div>
+          </section>
+          <section>
+            <div className="section__content">
+              <p>-마크트웨인-</p>
             </div>
           </section>
           <section>
             <div className="section__content">
               <p>
-                "눈을 뜨면 어제 살았던 나보다 더 가슴 벅차고 열정적인 하루를
-                살려고 노력한다. 연습실에 들어서며 어제 한 연습보다 더 강도 높은
-                연습을 한 번, 1분이라도 더 하기로 마음먹는다."
+                개발의 세계는 새로움이 가득하기에, 그 끝을 알수 없는 바다와
+                같다고 생각합니다.
               </p>
             </div>
           </section>
           <section>
             <div className="section__content">
               <p>
-                {" "}
-                "어제를 넘어선 오늘을 사는 것, 이것이 내 삶의 모토다." -
-                발레리나 강수진 -
-              </p>
-            </div>
-          </section>
-          <section>
-            <div className="section__content">
-              <p>
-                안주하지 않고, 남과 비교 하지 않고, 우직히 앞으로 나아가는
-                개발자가 되겠습니다.
+                현재에 안주하지않고, 새로움과 놀라움을 향해 계속해서
+                탐험해나가는 개발자가 되겠습니다.
               </p>
             </div>
           </section>

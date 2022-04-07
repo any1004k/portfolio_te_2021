@@ -87,7 +87,7 @@ import { gsap, ScrollTrigger } from "gsap/all";
 //https://alchera.ai/ 참고해서, 3차원 사진 돌리기 + 사진은 올라가고, 글은 스스륵 바뀌기 적용하자.
 
 function Portfolio() {
-  //$("nav:not(.bg-dark)").addClass("bg-dark");
+  $("nav:not(.bg-dark)").addClass("bg-dark");
 
   let li8 = useRef();
   let li7 = useRef();
@@ -670,13 +670,13 @@ function Portfolio() {
             <br />
             <label>· 기능 : </label>
             <br />
-            <label> ┖ push 알람 기능.</label>
+            <label> ┖ RESTful API 구현</label>
+            <br />
+            <label> ┖ firebase 활용하여 push 알람 구현.</label>
             <br />
             <label> ┖ 자동로그인 기능.</label>
             <br />
-            <label> ┖ qr 코드 인식 기능.</label>
-            <br />
-            <label> ┖ 데이터 join등을 통해 새로운 데이터 도출.</label>
+            <label> ┖ QR 코드 인식 기능.</label>
             <br />
             <label> ┖ db 프로시저를 활용하여 일괄처리 기능.</label>
             <br />
@@ -742,6 +742,8 @@ function Portfolio() {
                 http://www.podc.co.kr
               </a>
             </label>
+            <br />
+            <label> · 특징 : SPA적용, 반응형 웹싸이트, RESTful API 구현 </label>
             <br />
             <label> · 현재 운영중.</label>
             <br />
@@ -848,7 +850,7 @@ function Portfolio() {
             <br />
             <label>· 기능 : </label>
             <br />
-            <label> ┖ 자영업 사장님들의 커뮤니티 싸이트</label>
+            <label> ┖ RESTful API 구현</label>
             <br />
             <label>┖ 게시판 기능</label>
             <br />

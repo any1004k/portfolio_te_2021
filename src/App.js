@@ -11,7 +11,7 @@ import Home from "./pages/Home.js";
 import Skills from "./pages/Skills.js";
 import Portfolio from "./pages/Portfolio.js";
 // import Contacts from "./pages/Contacts.js";
-// import AboutMe from "./pages/AboutMe.js";
+import AboutMe from "./pages/AboutMe.js";
 
 import Erro404 from "./pages/Erro404.js";
 
@@ -28,7 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home}></Route>
             {/* <Route exact path="/AboutMe/:v1/:v2" component={AboutMe}></Route> */}
-            {/* <Route exact path="/AboutMe" component={AboutMe}></Route> */}
+            <Route exact path="/AboutMe" component={AboutMe}></Route>
             <Route exact path="/Skills" component={Skills}></Route>
             <Route exact path="/Portfolio" component={Portfolio}></Route>
             {/* <Route exact path="/Contacts" component={Contacts}></Route> */}
